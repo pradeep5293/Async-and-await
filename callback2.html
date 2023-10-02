@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback</title>
+</head>
+<body>
+    <button id="click">click here</button>
+    <script>
+        function attachEeventListners(){
+        let count=0;
+        document.getElementById("click").addEventListener("click",function xyz(){
+            console.log("button click",++count);
+        });
+    }
+    attachEeventListners();
+    </script>
+</body>
+</html>

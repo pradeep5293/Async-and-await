@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises Property</title>
+</head>
+
+<body>
+    <script>
+        // let complete = true;
+        // let promise = new Promise(function (resolve, rejected) {
+        //     if (complete) {
+        //         console.log("successfull");
+        //     } else {
+        //         console.log("failed");
+        //     }
+        // });
+        //     console.log(promise);
+
+        //case2.
+
+        function promise(complete){
+            return new Promise(function (resolve, rejected) {
+                console.log("fetching data,please wait");
+                setTimeout(()=>{
+
+            if (complete) {
+                console.log("successfull");
+            } else {
+                console.log("failed");
+            }
+        },1000)
+        });
+        }
+        let onResolve=(reulst)=>{
+            console.log(onResolve);
+        }
+        let onReject=(error)=>{
+            console.log(error);
+        }
+        promise(true).then(onResolve).catch(onReject);
+        
+        // console.log(promise(false));
+    </script>
+
+</body>
+
+</html>

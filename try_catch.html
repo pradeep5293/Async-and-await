@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function x(){
+    try{
+        await Promise.reject("Rejected!!");
+    }catch(e){
+        console.log(e);
+    }
+}
+// x();
+//OR
+x().catch((msg)=>{
+console.log(msg);
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise.race</title>
+</head>
+<body>
+    <script>
+        const promise1=new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve('a')
+            })
+            
+        })
+        const promise2=new Promise((resolve,reject)=>{
+            resolve('b')
+        })
+        const promise3=new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve('c')
+            },10)
+           
+        })
+        Promise.race([promise1,promise2,promise3]).then((msg)=>{
+            console.log(msg);
+        })
+    </script>
+</body>
+</html>

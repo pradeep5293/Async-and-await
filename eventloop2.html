@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise and event loop</title>
+</head>
+
+<body>
+    <script>
+        setTimeout(function () {
+            console.log(1);
+        }, 0);
+        let promise = new ProgressEvent(function (resolve, reject) {
+            resolve(2);
+        });
+
+        promise.then(function (data) {
+            console.log(data);
+        });
+        console.log(3);
+    </script>
+</body>
+
+</html>
